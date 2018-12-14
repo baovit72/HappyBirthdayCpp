@@ -30,7 +30,7 @@ void showLoiChuc() {
 	string chucTo = "DatDuyen";
 	string chucFrom = "Mr.Bao";
 	letterByLetter(loichuc1);
-	 
+
 	letterByLetter(loichuc2);
 	letterByLetter(chucTo);
 	letterByLetter(chucFrom, 0.2s);
@@ -38,11 +38,29 @@ void showLoiChuc() {
 void logOut() {
 	system("shutdown -l");
 }
+
+void countDown(int init = 15) {
+	system("cls");
+	int count = init;
+	
+	for (int i = count; i >= 0; i--) {
+		system("cls");
+		gotoXY(15, 15);
+		cout << "Dem nguoc: ";
+		cout << count;
+		cout << "s";
+		count--;
+		sleep_for(1s);
+	}
+	cout << "Pangpang->>>>>>>>>";
+}
+ 
 int main() {
 	//Them nhac thi dung 
 	PlaySound("something.wav", NULL, SND_ASYNC);
 	gotoXY(15, 15);
 	showLoiChuc();
+	countDown(10); 
 	system("pause");
 
 	return 0;
